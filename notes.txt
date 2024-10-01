@@ -1,11 +1,30 @@
-Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
-Hint: “Hovering” is what happens when your mouse enters a div and ends when your mouse leaves it. You can set up event listeners for either of those events as a starting point.
-There are multiple ways to change the color of the divs, including:
-Adding a new class to the div.
-Changing the div’s background color using JavaScript.
+Next Steps, Point 4 in the instructions
+-----------------------------------------
 
-1. Set a listener on the pixel class for hover
-2. Output to console log
-3. Decide if doing this or just a simple CSS rule with pseudoclass/type
+Add a button on the top of the screen that will send the user a popup asking for the number of squares per side for the new grid. Once entered, the existing grid should be removed, and a new grid should be generated in the same total space as before (e.g., 960px wide) so that you’ve got a new sketch pad.
+Tip: Set the limit for the user input to a maximum of 100. A larger number of squares results in more computer resources being used, potentially causing delays, freezing, or crashing that we want to prevent.
+Research button tags in HTML and how you can make a JavaScript function run when one is clicked.
+Also check out prompts.
+You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
 
-The goal is to achieve this with Javascript so let's do that and not use a hover pseudoclass
+Defining own steps:
+* How to set a variable and then use this to draw the grid?
+* How to pick up this variable in CSS when working on calculating grid size?
+
+This is an interesting problem because we're currently doing CSS calculations in a dedicated file and we won't be able to pick up.
+
+So yes, we'll have to set height and width directly in our JS.
+
+Next steps:
+* Draw initial grid x
+* Add a button at the top
+* Create prompt when button clicked to get grid size
+* Add validation on prompt, reprompt if fails
+* If passes, delete existing grid OR container
+* Make new grid, make new container
+* Add height/width to new grid via JS
+
+Future:
+* Add Tailwind or Bootstrap
+* Change positioning of grid to be central regardless of viewport size
+* Do bonus tasks on project page

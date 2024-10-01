@@ -24,3 +24,14 @@ body {
     width: calc(100% / 16);
     height: calc(100% / 16);       
 }
+/* 
+.pixel:hover {
+    background-color: black;
+    /* transition: ; 
+    transition-duration: 1s;
+} */
+
+.drawn {
+    background-color: black;
+}
+

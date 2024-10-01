@@ -1,0 +1,5 @@
+* Create a container of fixed size
+* Decorate container
+* Center container to page
+* Use JS to add 64 blocks
+* Decide how to display CSS

@@ -17,7 +17,8 @@ So yes, we'll have to set height and width directly in our JS.
 
 Next steps:
 * Draw initial grid x
-* Add a button at the top
+* Add a button at the top x
+* Set layout of button, flex is ok but work out where and how, you'll need to set the size x
 * Create prompt when button clicked to get grid size
 * Add validation on prompt, reprompt if fails
 * If passes, delete existing grid OR container

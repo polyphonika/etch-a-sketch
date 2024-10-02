@@ -2,8 +2,7 @@
 
 const gridSize = 16
 
-
-const container = document.getElementById('container');
+const container = document.getElementById('grid-container');
 
 for (let i=0; i<(gridSize**2); i++) {
     let pixel = document.createElement('div');

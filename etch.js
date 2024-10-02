@@ -33,7 +33,30 @@ function deleteGrid() {
 
 
 function addPixelColour(e) {
-    e.target.classList.add('drawn');        
+    // Method 1: Add CSS Class
+    e.target.classList.add('drawn');  
+    // Method 2: Completely random RGB values
+    // e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;      
+    // Method 3: Random based on MouseX, Mouse Y        
+    // e.target.style.backgroundColor = randomScaling(e);
+}
+
+function randomScaling(e) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    
+    // Scale e.pageX and e.pageY to fit within 0-255
+    const red = Math.floor((e.pageX / width) * 255);
+    const green = Math.floor((e.pageY / height) * 255);
+    
+    // You can add a static or dynamic value for blue, or use a combination
+    const blue = Math.floor(((e.pageX + e.pageY) / (width + height)) * 255);
+    // const blue = 200;
+    
+    // Create the RGB value
+    const rgb = `rgb(${red}, ${green}, ${blue})`;
+
+    return rgb;
 }
 
 function promptNewGrid() {

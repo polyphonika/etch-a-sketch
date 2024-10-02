@@ -39,6 +39,10 @@ function addPixelColour(e) {
     // e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;      
     // Method 3: Random based on MouseX, Mouse Y        
     // e.target.style.backgroundColor = randomScaling(e);
+
+    // Opacity handling
+    const currentOpacity = parseFloat(e.target.style.opacity || 0);
+    e.target.style.opacity = Math.min(currentOpacity + 0.1, 1);
 }
 
 function randomScaling(e) {

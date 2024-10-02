@@ -29,3 +29,7 @@ Future:
 * Add Tailwind or Bootstrap
 * Change positioning of grid to be central regardless of viewport size
 * Do bonus tasks on project page
+
+--------------
+
+Now get height/width

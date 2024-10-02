@@ -35,7 +35,6 @@ button:hover {
 }
 
 #grid-container {
-    /* margin-top:10vh; */
     height: 60vh;
     width: 60vh;
     border: 1px solid #aca8a8;
@@ -45,8 +44,8 @@ button:hover {
 
 .pixel {
     border: 1px solid darkgrey;
-    width: calc(100% / 16);
-    height: calc(100% / 16);       
+    /* width: calc(100% / 16);
+    height: calc(100% / 16);        */
 }
 
 .drawn {

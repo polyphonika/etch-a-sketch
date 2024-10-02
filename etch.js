@@ -1,26 +1,51 @@
-// Create 256 divs - create initial div then append 64 times
-
-const gridSize = 16
-
 const container = document.getElementById('grid-container');
+const btnCreateGrid = document.getElementById('btn-new-grid');
+const btnResetGrid = document.getElementById('btn-reset-grid');
 
-for (let i=0; i<(gridSize**2); i++) {
-    let pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    container.appendChild(pixel);
+btnCreateGrid.addEventListener('click', promptNewGrid);
+btnResetGrid.addEventListener('click', () => drawGrid(16));
+
+function drawGrid(gridSize) {
+    deleteGrid(); //clear any existing
+
+    for (let i=0; i<(gridSize**2); i++) {
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        let calcSize = 1/gridSize*100;        
+        pixel.style.width = `${calcSize}%`;
+        pixel.style.height = `${calcSize}%`;
+        container.appendChild(pixel);
+    }
+
+    // Handle Drawing
+    const pixels = document.querySelectorAll('.pixel');
+
+    pixels.forEach(element => {
+        element.addEventListener('mouseenter', function(e) {
+            addPixelColour(e)
+        })
+    });
 }
 
-// Handle Drawing
-const pixels = document.querySelectorAll('.pixel');
+function deleteGrid() {
+    container.innerHTML = '';
+}
 
-pixels.forEach(element => {
-    element.addEventListener('mouseenter', function(e) {
-        addPixelColour(e)
-    })
-});
 
 function addPixelColour(e) {
-    e.target.classList.add('drawn');    
+    e.target.classList.add('drawn');        
 }
+
+function promptNewGrid() {
+    let promptSize = prompt('What size grid? eg 64x64, enter 64 (min 10, max 100) > ');
+    if (promptSize < 10 || promptSize > 100 || isNaN(promptSize)) {
+        promptNewGrid();
+    } else {
+        drawGrid(promptSize)
+    }
+}
+
+// Init initial grid on page load
+drawGrid(16);
 
 
